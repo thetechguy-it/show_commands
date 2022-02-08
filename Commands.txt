@@ -1,0 +1,6 @@
+show version
+show interface status
+show ip interface brief
+show run | inc domain
+show run | inc ntp
+show ip route
