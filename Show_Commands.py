@@ -8,7 +8,6 @@ from contextlib import redirect_stdout
 import credentials
 import type
 import socket
-import os
 from pathlib import Path
 import shutil
 
