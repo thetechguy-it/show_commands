@@ -12,17 +12,12 @@ import os
 from pathlib import Path
 import shutil
 
-print("Import libraries = OK")
 
 total_ips = open("IPAddressList.txt")
 ips = total_ips.readlines()
 total_commands = open("Commands.txt")
 commands = total_commands.readlines()
-print(ips)
-print(commands)
-print("Import External Files = OK")
 print("With this script you will launch the commands inside the file called 'Commands.txt' to all the devices inside the file called 'IPAddressList.txt")
-print("The list of the commands are:", str(total_commands))
 for ip in ips:
     SSH = ConnectHandler (ip, device_type = type.type_ios, username = credentials.username, password = credentials.password)
     dev_name = SSH.send_command("show run | in hostname")
@@ -35,7 +30,6 @@ for ip in ips:
         print("I created I file called: ", hostname,". You will find here all the outputs")
         with redirect_stdout(txt_file):
             for command in commands:
-            #for command in total_commands:
                 print("***", command, "***")
                 output = (SSH.send_command(command))
                 print (output, "\n\n")         
