@@ -6,7 +6,6 @@ from netmiko import ConnectHandler
 from contextlib import redirect_stdout
 import credentials
 import type
-from pathlib import Path
 
 
 total_ips = open("IPAddressList.txt")
