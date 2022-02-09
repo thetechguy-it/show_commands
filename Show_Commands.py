@@ -1,15 +1,12 @@
 # With this script you will launch the commands inside the file called 'Commands.txt' to all the devices inside the file called 'IPAddressList.txt
 
 
-import paramiko
 import netmiko
 from netmiko import ConnectHandler
 from contextlib import redirect_stdout
 import credentials
 import type
-import socket
 from pathlib import Path
-import shutil
 
 
 total_ips = open("IPAddressList.txt")
