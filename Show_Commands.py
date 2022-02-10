@@ -1,7 +1,6 @@
 # With this script you will launch the commands inside the file called 'Commands.txt' to all the devices inside the file called 'IPAddressList.txt
 
 
-import netmiko
 from netmiko import ConnectHandler
 from contextlib import redirect_stdout
 import credentials
@@ -12,7 +11,9 @@ total_ips = open("IPAddressList.txt")
 ips = total_ips.readlines()
 total_commands = open("Commands.txt")
 commands = total_commands.readlines()
+
 print("With this script you will launch the commands inside the file called 'Commands.txt' to all the devices inside the file called 'IPAddressList.txt")
+
 for ip in ips:
     SSH = ConnectHandler (ip, device_type = type.type_ios, username = credentials.username, password = credentials.password)
     dev_name = SSH.send_command("show run | in hostname")
@@ -32,3 +33,5 @@ for ip in ips:
     SSH_Check_Connection = SSH.is_alive()
     print("The connection to the device is:" + str(SSH_Check_Connection))
     print("\n\n\n")
+total_ips.close()
+total_commands.close()
