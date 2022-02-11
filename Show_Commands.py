@@ -11,7 +11,6 @@ total_ips = open("IPAddressList.txt", "r")
 ips = total_ips.readlines()
 total_commands = open("Commands.txt", "r")
 commands = total_commands.readlines()
-
 print("With this script you will launch the commands inside the file called 'Commands.txt' to all the devices inside the file called 'IPAddressList.txt")
 
 for ip in ips:
