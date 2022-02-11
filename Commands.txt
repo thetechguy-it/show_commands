@@ -4,3 +4,4 @@ show ip interface brief
 show run | inc domain
 show run | inc ntp
 show ip route
+show run
