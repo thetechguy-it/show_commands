@@ -32,7 +32,7 @@ if not os.path.exists(backup_folder):
     os.mkdir(backup_folder)
 os.chdir(backup_folder)
 
-# Current time and formats it as: Month, Day, Year, Hour and Minute.
+# Retrive current time and formats it as: Month, Day, Year, Hour and Minute.
 now = datetime.now()
 dt_string_full = now.strftime("%m-%d-%Y_%H-%M")
 dt_string = now.strftime("%m-%d-%Y")
@@ -51,7 +51,7 @@ for ip in ip_list:
         with open(ip + "_" + dt_string_full + ".txt", "w") as downdevice:
             downdevice.write("This device is not reachable, please fix the issue")
     else:
-        print("The device with the IP Address: " + ip + " is reachable. I'm going to connect via SSH\n")
+        print("The device with the IP Address: " + ip + " is reachable. I'm going to connect via SSH and lunch commands\n")
         SSH = ConnectHandler (ip, device_type = os_vendor.type_ios, username = credentials.username, password = credentials.password, fast_cli = False)
         dev_name = SSH.send_command("show run | in hostname")
         dev_name = dev_name.split(" ")
