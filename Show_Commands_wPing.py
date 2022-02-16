@@ -32,6 +32,9 @@ now = datetime.now()
 dt_string_full = now.strftime("%m-%d-%Y_%H-%M")
 dt_string = now.strftime("%m-%d-%Y")
 
+# If you want to change directory, plese add here the specific folder:
+# os.chdir("c:/Users/xxxxx-xxxx")
+
 # Checks if the backup folder exists, if not, it creates it. Put the name 
 backup_folder = "CFG_Backup"
 if not os.path.exists(backup_folder):
