@@ -29,7 +29,7 @@ print("With this script you will launch the commands inside the file called 'Com
 
 # Retrive current time and formats it as: Month, Day, Year, Hour and Minute.
 now = datetime.now()
-dt_string_full = now.strftime("%m-%d-%Y_%H-%M")
+dt_string_full = now.strftime("%m-%d-%Y_%H-%M-%S")
 dt_string = now.strftime("%m-%d-%Y")
 
 # If you want to change directory, plese add here the specific folder:
@@ -50,7 +50,7 @@ print("I'm going to test the ICMP reachability for all the IP Addresses\n\n")
 for ip in ip_list:
     print("Testing: " + ip)
     ip_reach = ping(ip)
-    if ip_reach == None:
+    if ip_reach == False:
         print("The device with the IP Address: " + ip + " is not reachable. Please verify its status and connectivity\n\n\n")
         with open(ip + "_" + dt_string_full + ".txt", "w") as downdevice:
             downdevice.write("This device is not reachable. Please verify its status and connectivity")
@@ -62,16 +62,16 @@ for ip in ip_list:
         hostname = dev_name[1]
         print ("I'm processing the device called", hostname, "with the following IP Address:", ip)
         SSH_Check_Connection = SSH.is_alive()
-        print("The connection to the device is:" + str(SSH_Check_Connection))
+        print("The SSH connection to the device is:" + str(SSH_Check_Connection))
         with open(hostname + "_" + dt_string_full + ".txt", "w") as txt_file:
-            print("The file called: " + hostname + ".txt has been created into the " + backup_folder + "/" + dt_string + " folder. You will find here all the outputs")
+            print("The file called: " + hostname + ".txt has been created into the " + backup_folder + "/" + dt_string + " folder. You will find here all the outputs. I'm going to close the SSH session")
             for command in commands_list:
-                txt_file.write("This is the output for the following command:" + command + "\n\n")
+                txt_file.write("######## " + command + " ######## \n\n")
                 output = (SSH.send_command(command))
                 txt_file.write(output + "\n\n\n\n")         
         SSH.disconnect()
         SSH_Check_Connection = SSH.is_alive()
-        print("The connection to the device is:" + str(SSH_Check_Connection))
+        print("The SSH connection to the device is:" + str(SSH_Check_Connection))
         print("\n\n\n")
 total_ips.close()
 total_commands.close()
