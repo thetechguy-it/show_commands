@@ -8,11 +8,10 @@ import os
 from datetime import date, datetime
 from ping3 import ping
 
-
-total_ips = open("IPAddressList.txt", "r")
-ip_list_temp = total_ips.readlines()
 # The created list has "\n" in each string. I'll create a new empty list in order to fill it with just the IPs without the "\n"
 # ['10.155.233.205\n', '10.155.233.201\n', '10.155.233.202\n', '10.155.233.203\n', '10.155.233.204\n', '10.155.233.206']
+total_ips = open("IPAddressList.txt", "r")
+ip_list_temp = total_ips.readlines()
 ip_list = []
 for ips in ip_list_temp:
     temp_list = ips.split("\n")
@@ -44,8 +43,8 @@ create_folder(backup_folder)
 
 # Retrive current time and formats it as: Month, Day, Year, Hour and Minute.
 now = datetime.now()
-dt_string_full = now.strftime("%m-%d-%Y_%H-%M-%S")
-dt_string = now.strftime("%m-%d-%Y")
+dt_string = now.strftime("%m-%d-%Y") #I'll use it for the folder name (only the day, month and year)
+dt_string_full = now.strftime("%m-%d-%Y_%H-%M-%S") # I'll use it for file names, it includes hour, minute and second
 
 # Checks if the daily folder exists, if not, it creates it.
 create_folder(dt_string)
