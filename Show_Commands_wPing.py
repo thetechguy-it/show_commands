@@ -8,6 +8,7 @@ import os
 from datetime import date, datetime
 from ping3 import ping
 
+
 total_ips = open("IPAddressList.txt", "r")
 ip_list_temp = total_ips.readlines()
 # The created list has "\n" in each string. I'll create a new empty list in order to fill it with just the IPs without the "\n"
@@ -27,24 +28,31 @@ for commands in commands_temp:
     commands_list.append(command_temp_list[0])
 print("With this script you will launch the commands inside the file called 'Commands.txt' to all the devices inside the file called 'IPAddressList.txt\n\n\n")
 
+
+# If you want to change directory, plese add here the specific folder:
+# os.chdir("c:/Users/xxxxx-xxxx")
+
+# Define a new folder, if not available, it creates it.
+def create_folder(folder):
+    if not os.path.exists(folder):
+        os.mkdir(folder)
+    os.chdir(folder)
+    
+# Checks if the backup folder exists, if not, it creates it. Put the name 
+backup_folder = "CFG_Backup"
+create_folder(backup_folder)
+
 # Retrive current time and formats it as: Month, Day, Year, Hour and Minute.
 now = datetime.now()
 dt_string_full = now.strftime("%m-%d-%Y_%H-%M-%S")
 dt_string = now.strftime("%m-%d-%Y")
 
-# If you want to change directory, plese add here the specific folder:
-# os.chdir("c:/Users/xxxxx-xxxx")
-
-# Checks if the backup folder exists, if not, it creates it. Put the name 
-backup_folder = "CFG_Backup"
-if not os.path.exists(backup_folder):
-    os.mkdir(backup_folder)
-os.chdir(backup_folder)
-
 # Checks if the daily folder exists, if not, it creates it.
-if not os.path.exists(dt_string):
-    os.mkdir(dt_string)
-os.chdir(dt_string)
+create_folder(dt_string)
+
+
+
+
 print("I'm going to test the ICMP reachability for all the IP Addresses\n\n")
 
 for ip in ip_list:
