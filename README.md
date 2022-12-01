@@ -47,7 +47,7 @@ Create a virtual environment in order to test the code:
 > pip3 install netmiko         
 > pip3 install ping3        
 > pip3 install networkscan          
-> sudo python3 <file>.py         
+> sudo python3 < scriptname >.py         
 
 The code will create a folder called "BACKUP" and then another folder with the date. Inside this second folder, you will find all your files.
 
