@@ -1,5 +1,4 @@
 from netmiko import ConnectHandler
-import os_vendor
 import os
 from datetime import date, datetime
 from ping3 import ping
