@@ -37,6 +37,12 @@ Install the following modules:
 ## USERNAME/PASSWORD
 The code does not have any pre-defined username/password. When you run the code it will ask you the username and password for the devices.     
 
+## CISCO VERSION
+Tested and working with:
+- IOS XE
+- NX-OS
+- IOS
+
 ## RUN THE CODE
 Create a virtual environment in order to test the code:     
 
