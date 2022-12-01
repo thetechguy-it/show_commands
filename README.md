@@ -30,24 +30,24 @@ It's up to you!
 ## MODULES
 Install the following modules:
 
-> pip3 install netmiko
-> pip3 install ping3
-> pip3 install networkscan
+> pip3 install netmiko       
+> pip3 install ping3         
+> pip3 install networkscan       
 
 
 ## RUN THE CODE
 
 Create a virtual environment in order to test the code:     
 
-> python3 -m venv TEST
-> source TEST/bin/activate
-> cd TEST/
-> git clone https://github.com/thetechguy-it/show_commands.git
-> cd show_commands/
-> pip3 install netmiko
-> pip3 install ping3
-> pip3 install networkscan
-> sudo python3 <file>.py
+> python3 -m venv TEST        
+> source TEST/bin/activate         
+> cd TEST/            
+> git clone https://github.com/thetechguy-it/show_commands.git         
+> cd show_commands/         
+> pip3 install netmiko         
+> pip3 install ping3        
+> pip3 install networkscan          
+> sudo python3 <file>.py         
 
 The code will create a folder called "BACKUP", then another folder with the date. Inside this second folder you will find all your files.
 
