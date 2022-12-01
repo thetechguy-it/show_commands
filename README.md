@@ -35,7 +35,7 @@ Install the following modules:
 > pip3 install networkscan       
 
 ## USERNAME/PASSWORD
-The code does not have any pre-defined username/password. When you run the code it will ask you the username and password for the devices.
+The code does not have any pre-defined username/password. When you run the code it will ask you the username and password for the devices.     
 
 ## RUN THE CODE
 Create a virtual environment in order to test the code:     
