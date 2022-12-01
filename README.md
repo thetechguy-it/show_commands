@@ -52,4 +52,4 @@ Create a virtual environment in order to test the code:
 The code will create a folder called "BACKUP", then another folder with the date. Inside this second folder you will find all your files.
 
 Example:
-![example1](https://github.com/thetechguy-it/show_commands/example1.png)
+![example1](https://github.com/thetechguy-it/show_commands/blob/main/example1.png)
