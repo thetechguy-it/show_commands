@@ -1,1 +1,0 @@
-type_ios = 'cisco_ios'
