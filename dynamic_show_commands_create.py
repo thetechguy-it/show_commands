@@ -72,8 +72,8 @@ def discover_network():
     ip_reachability(reachable_ip)
 
 # User enters device credentials 
-username = input('Enter your username: ')
-password = getpass.getpass('Enter your password: ')
+username = input('Enter your AD username: ')
+password = getpass.getpass('Enter your AD password: ')
 
 # Code opens the file where commands are stored (1 per line)
 file_commands = open("Commands.txt", "r")
